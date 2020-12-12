@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoSQLite.VistaDetalleArticulo">
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 Spacing="15"
+                 Padding="10, 30, 10, 0">
+        <Label FontSize="20"
+               Text="Nuevo articulo"
+               HorizontalTextAlignment="Center"></Label>
+        
+        <!--formulario-->
+        <StackLayout Spacing="5">
+            <Label Text="Descripcion"
+                   FontSize="15"></Label>
+            <Entry Placeholder="Descripcion"
+                   x:Name="txtDesc"
+                   FontSize="13"></Entry>
+        </StackLayout>
+
+        <StackLayout Spacing="5">
+            <Label Text="Cantidad"
+                   FontSize="15"></Label>
+            <Entry Placeholder="Cantidad"
+                   x:Name="txtCant"
+                   FontSize="13"></Entry>
+        </StackLayout>
+
+        <StackLayout Spacing="5">
+            <Label Text="Precio unitario"
+                   FontSize="15"></Label>
+            <Entry Placeholder="Precio unitario"
+                   x:Name="txtPr"
+                   FontSize="13"></Entry>
+        </StackLayout>
+
+        <StackLayout Spacing="5">
+            <Label Text="Total"
+                   FontSize="15"></Label>
+            <Entry Placeholder="Total"
+                   x:Name="txtTotal"
+                   FontSize="13"
+                   IsEnabled="False"></Entry>
+        </StackLayout>
+
+        <Button Text="Guardar"
+                FontSize="17"
+                Clicked="Button_Clicked"></Button>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoSQLite.MainPage">
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 Spacing="15"
+                 Padding="10, 30, 10, 0">
+        <Label FontSize="20"
+               Text="Mi despensa"
+               HorizontalTextAlignment="Center"></Label>
+
+        <Button Text="Agregar artículo"
+                FontSize="17"
+                Clicked="Button_Clicked"></Button>
+
+        <CollectionView x:Name="cllDespensa"
+                        ItemsLayout="VerticalList"
+                        HeightRequest="160"
+                        SelectionChanged="cllDespensa_SelectionChanged"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Eliminar"
+                                           Invoked="SwipeItem_Clicked"
+                                           BackgroundColor="OrangeRed"
+                                           CommandParameter="{Binding}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Frame Margin="15"
+                           HasShadow="False"
+                           Padding="10"
+                           BackgroundColor="LightCyan"
+                           CornerRadius="10">
+                            <StackLayout Spacing="10">
+                                <Label FontSize="20"
+                                   TextColor="Black"
+                                   Text="{Binding Descripcion}"></Label>
+                                <Label Text="{Binding Cantidad}"
+                                   FontSize="15"
+                                   TextColor="Black"></Label>
+                                <Label Text="{Binding PrecioUnitario}"
+                                   FontSize="13"
+                                   TextColor="Black"></Label>
+                                <Label Text="{Binding Total}"
+                                   FontSize="13"
+                                   TextColor="Black"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </SwipeView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
